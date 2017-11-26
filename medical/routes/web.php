@@ -28,6 +28,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('recepcionista/pacientes','recepcionista\PacienteController@index');
     Route::get('recepcionista/paciente/ingreso/{id?}','recepcionista\PacienteController@createForm');
 
+
+
 });
+
 
 Route::auth();
