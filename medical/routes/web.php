@@ -36,6 +36,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('recepcionista/pacientes','recepcionista\PacienteController@index');
     Route::get('recepcionista/pacientes/ingreso/{id?}','recepcionista\PacienteController@create');
     Route::post('recepcionista/pacientes/ingreso','recepcionista\PacienteController@store');
+
+    //rutas doctor
+
 });
 
 Route::auth();
@@ -43,5 +46,3 @@ Route::auth();
 Route::get('administrador/usuarios/ver', 'AdminUsers\AdminController@index');
 Route::get('administrador/usuarios/crear', 'AdminUsers\AdminController@create');
 Route::post('administrador/usuarios/creado', 'AdminUsers\AdminController@store');
-
-

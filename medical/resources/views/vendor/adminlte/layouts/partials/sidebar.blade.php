@@ -18,12 +18,12 @@
             </div>
         @endif
         <!-- Sidebar Menu -->
-        <ul class="sidebar-menu">       
+        <ul class="sidebar-menu">
                 <!-- Validando el tipo de usuario que haces -->
-                @if(Auth::user()->tipo == 3)                                                
-                <li class="header">Enfermeria</li>                                 
-                <li class="active"><a href="{{url('enfermeria/pacientes/')}}"                
-                ><i class= 'fa fa-users' ></i> 
+                @if(Auth::user()->tipo == 3)
+                <li class="header">Enfermeria</li>
+                <li class="active"><a href="{{url('enfermeria/pacientes/')}}"
+                ><i class= 'fa fa-users' ></i>
                     Pacientes
                 </a></li>
                 @elseif(Auth::user()->tipo == 2)
