@@ -12,7 +12,7 @@
                 <div class="panel panel-default">
                     <div class="panel-body">
                         <div class="table-responsive">
-                             <table id="tabla" class="table table-condensed table-striped table-bordered text-center">
+                             <table id="tabla" class="table table-condensed table-striped table-bo	rdered text-center">
                                  <thead>
                                      <th >Cédula</th>
                                      <th >Nombre</th>
