@@ -26,4 +26,6 @@ Route::group(['middleware' => 'auth'], function () {
 
 Route::auth();
 
+Route::get('administrador/usuarios/ver', 'AdminUsers\AdminController@index');
+
 
