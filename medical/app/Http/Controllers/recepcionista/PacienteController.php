@@ -12,4 +12,9 @@ class PacienteController extends Controller
     	$p = paciente::all();
     	return view('recepcionista.paciente.index',['pacientes'=>$p]);
     }
+    public function show($id){
+    	$p = paciente::find($id):
+
+    	return 
+    }
 }
