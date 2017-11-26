@@ -9,4 +9,5 @@ class dosis_medicamentos extends Model
   protected $table = 'dosis_medicamentos';
   protected $primaryKey = 'id_dosis_medicamentos';
   protected $guarded = array();
+  public $timestamps = false;
 }

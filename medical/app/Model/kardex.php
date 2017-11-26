@@ -9,4 +9,5 @@ class kardex extends Model
   protected $table = 'kardex';
   protected $primaryKey = 'id_kardex';
   protected $guarded = array();
+  public $timestamps = false;
 }

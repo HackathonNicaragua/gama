@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Support\Facades\Redirect;
+use App\Model\rel_hospital_user;
 
 class AdminController extends Controller
 {
@@ -50,6 +51,18 @@ class AdminController extends Controller
         $usuario->password=bcrypt('contra');
         $usuario->tipo=$request->get('tipo');;
         $usuario->save();
+
+        $idU = $usuario->id;
+
+        $hu = new rel_hospital_user;
+
+        // Creando el expediente
+        $h = rel_hospital_user::select('id_hospital')->where('id','=',auth()->user()->id)->first();
+        // return $h->id_hospital;
+        $hu->id_hospital = $h->id_hospital;
+        $hu->id = $idU;
+
+        $hu->save();
 
         return Redirect::to('administrador/usuarios/ver');
 

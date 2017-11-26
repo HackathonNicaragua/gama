@@ -18,14 +18,14 @@
             </div>
         @endif
         <!-- Sidebar Menu -->
-        <ul class="sidebar-menu">
+        <ul class="sidebar-menu">       
                 <!-- Validando el tipo de usuario que haces -->
-                @if(Auth::user()->tipo == 3)
-                <li class="header">Enfermeria</li>
-                <li @if(Request::is('enfermeria/pacientes/*'))class="active" @endif><a href="{{url('enfermeria/pacientes/')}}">
-                <i class= 'fa fa-users' ></i> Pacientes </a></li>
-                <li  @if(Request::is('enfermeria/kardex/*'))class="active" @endif><a href="{{url('enfermeria/kardex/')}}">
-                <i class= 'fa fa-file' ></i> Kardex </a></li>
+                @if(Auth::user()->tipo == 3)                                                
+                <li class="header">Enfermeria</li>                                 
+                <li class="active"><a href="{{url('enfermeria/pacientes/')}}"                
+                ><i class= 'fa fa-users' ></i> 
+                    Pacientes
+                </a></li>
                 @elseif(Auth::user()->tipo == 2)
                     <li class="header">Recepcionista</li>
                     <li class="treeview">
@@ -35,9 +35,7 @@
                             <li><a href="{{url('recepcionista/pacientes/ingreso')}}"><i></i>Registrar</a></li>
                         </ul>
                     </li>
-                @elseif(Auth::user()->tipo == 1)
-                    <li class="header">Médico</li>
-                @else
+                @elseif(Auth::user()->tipo == 0)
                     <li class="header">Administrador</li>
                     <li class="treeview">
                         <a href="#"><i class='fa fa-users'></i> <span>Usuarios</span> <i class="fa fa-angle-left pull-right"></i></a>
@@ -47,8 +45,6 @@
                         </ul>
                     </li>
                 @endif
-
-
         </ul><!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->
