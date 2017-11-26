@@ -10,8 +10,8 @@
 		<div class="row">
 			<div class="col-md-9 col-md-offset-1">
 				
-				<h1>Mostrando la hoja medica de {{$p->nombres}}</h1>
-
+				<h1>Mostrando la hoja medica de {{$k->nombres}}</h1>				
+				{{$k}}
 			</div>
 		</div>
 	</div>

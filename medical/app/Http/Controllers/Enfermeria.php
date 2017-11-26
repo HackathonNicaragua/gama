@@ -14,8 +14,22 @@ class Enfermeria extends Controller
     	return view('enfermeria.index');
     }
 
-    public function hojamedica($id){
-    	return view('enfermeria.hojasmedica', ['id' => $id]);
+    public function hojamedica($id){        
+        $kardex =
+        medicamento::select(
+            'medicamento.nombre', 
+            'medicamento.presentacion',
+            'dosis_medicamentos.*',
+            'paciente.*'                      
+        )
+        ->join('dosis_medicamentos','medicamento.id_medicamento', '=', 'dosis_medicamentos.id_dosis_medicamento')
+        ->join('registro_evolucion','registro_evolucion.id_registro_evolucion', '=', 'dosis_medicamentos.id_dosis_medicamento')
+        ->join('hoja_evolucion','hoja_evolucion.id_hoja_evolucion', '=', 'registro_evolucion.id_registro_evolucion')
+        ->join('expediente','expediente.id_expediente', '=', 'hoja_evolucion.id_expediente')
+        ->join('paciente','paciente.id_paciente', '=', 'expediente.id_expediente')
+        ->where('paciente.id_paciente', '=', $id)
+        ->first(); 
+    	return view('enfermeria.hojasmedica', ['k'=>$kardex]);
     }
 
     //
@@ -28,11 +42,12 @@ class Enfermeria extends Controller
 
     public function kardexPaciente($id){
 
-        $p = paciente::where('id_paciente',$id)->get();
-
         $kardex =
         medicamento::select(
-            'medicamento.nombre', 'medicamento.presentacion'
+            'medicamento.nombre', 
+            'medicamento.presentacion',
+            'dosis_medicamentos.*',
+            'paciente.*'                         
         )
         ->join('dosis_medicamentos','medicamento.id_medicamento', '=', 'dosis_medicamentos.id_dosis_medicamento')
         ->join('registro_evolucion','registro_evolucion.id_registro_evolucion', '=', 'dosis_medicamentos.id_dosis_medicamento')
@@ -40,8 +55,7 @@ class Enfermeria extends Controller
         ->join('expediente','expediente.id_expediente', '=', 'hoja_evolucion.id_expediente')
         ->join('paciente','paciente.id_paciente', '=', 'expediente.id_expediente')
         ->where('paciente.id_paciente', '=', $id)
-        ->get();
-        
-    	return view('enfermeria/kardex',['p'=>$p,'kardex'=>$kardex]);
+        ->first();        
+    	return view('enfermeria/kardex',['k'=>$kardex]);
     }
 }
