@@ -26,6 +26,8 @@
                 <i class= 'fa fa-users' ></i> Pacientes </a></li>
                 <li  @if(Request::is('enfermeria/kardex/*'))class="active" @endif><a href="{{url('enfermeria/kardex/')}}">
                 <i class= 'fa fa-file' ></i> Kardex </a></li>
+                <li  @if(Request::is('enfermeria/hojas_medicas/*'))class="active" @endif><a href="{{url('enfermeria/hojas_medicas/')}}">
+                <i class= 'fa fa-address-book-o ' ></i> Hojas Medicas </a></li>
                 @elseif(Auth::user()->tipo == 2)
                     <li class="header">Recepcionista</li>
                     <li class="treeview">
