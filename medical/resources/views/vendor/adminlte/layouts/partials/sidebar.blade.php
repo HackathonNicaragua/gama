@@ -39,6 +39,13 @@
                     </li>
                 @elseif(Auth::user()->tipo == 1)
                     <li class="header">Médico</li>
+                    <li class="treeview">
+                        <a href="#"><i class='fa fa-users'></i> <span>Expedientes</span> <i class="fa fa-angle-left pull-right"></i></a>
+                        <ul class="treeview-menu">
+                            <li><a href="{{url('doctor/expediente/ver')}}"><i class=""></i>Lista expedientes</a></li>
+                            {{-- <li><a href="{{url('administrador/usuarios/crear')}}"><i></i>Registrar</a></li> --}}
+                        </ul>
+                    </li>
                 @else
                     <li class="header">Administrador</li>
                     <li class="treeview">
