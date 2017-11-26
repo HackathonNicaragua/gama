@@ -22,9 +22,12 @@ Route::group(['middleware' => 'auth'], function () {
 
     //Please do not remove this if you want adminlte:route and adminlte:link commands to works correctly.
     #adminlte_routes
-
      Route::get("enfermeria", 'Enfermeria@index');
-     Route::get("enfermeria/paciente/{id}/hojamedica", 'Enfermeria@hojamedica');
+     Route::get("enfermeria/paciente/{id}/hojamedica", 'Enfermeria@hojamedica');     
+     //Esta ruta va a mostrarme un kardex en especifico
+     //Aqui el enfermero podra imprimir el kardex si lo desea
+     Route::get("enfermeria/paciente/{id}/kardex", "Enfermeria@kardexPaciente");     
+
 });
 
 Route::auth();
