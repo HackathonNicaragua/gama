@@ -1,7 +1,7 @@
 @extends('adminlte::page')
 
 @section('htmlheader_title')
-	
+	Enfermeria-Kardex
 @endsection
 
 
@@ -9,9 +9,7 @@
 	<div class="container-fluid spark-screen">
 		<div class="row">
 			<div class="col-md-9 col-md-offset-1">
-				
-				<h1>Mostrando la hoja medica de {{$p->nombres}}</h1>
-
+                    Kardex del paciente {{$p->nombres}}
 			</div>
 		</div>
 	</div>

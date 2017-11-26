@@ -1,31 +1,26 @@
 @extends('adminlte::page')
 
 @section('htmlheader_title')
-	Change Title here!
+	Pacientes
 @endsection
 
 
 @section('main-content')
 	<div class="container-fluid spark-screen">
 		<div class="row">
-			<div class="col-md-9 col-md-offset-1">
-
-				<div class="box box-success box-solid">
-                    <div class="box-header with-border">
-                        <h3 class="box-title">Example box</h3>
-                        <div class="box-tools pull-right">
-                            <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-                        </div>
-                        <!-- /.box-tools -->
-                    </div>
-                    <!-- /.box-header -->
-                    <div class="box-body">
-                        Put your content here
-                    </div>
-                    <!-- /.box-body -->
-                </div>
-
+			<div class="col-md-9 col-md-offset-1">                
+            @if(count($pacientes) > 0 )
+                 <ul>                            
+                 @foreach($pacientes as $p)
+                     <li>
+                        <h2>Paciente {{$p->nombres}} {{$p->apellidos}}. Edad:{{$p->edad}}. Fecha de ingreso {{$p->fecha_ingreso}}</h2>     
+                     </li>
+                    
+                 @endforeach
+                 </ul>
+            @else
+                <h2>No hay items</h2>
+            @endif
 			</div>
 		</div>
 	</div>
