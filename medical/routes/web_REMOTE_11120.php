@@ -46,33 +46,6 @@ Route::group(['middleware' => 'auth'], function () {
        Route::get('administrador/usuarios/ver', 'AdminUsers\AdminController@index');
        Route::get('administrador/usuarios/crear', 'AdminUsers\AdminController@create');
        Route::post('administrador/usuarios/creado', 'AdminUsers\AdminController@store');
-<<<<<<< HEAD
-
-
-
-	// Rutas Recepcionista
-    Route::get('recepcionista/pacientes','recepcionista\PacienteController@index');
-    Route::get('recepcionista/pacientes/ingreso/{id?}','recepcionista\PacienteController@create');
-    Route::post('recepcionista/pacientes/ingreso','recepcionista\PacienteController@store');
-
-    //rutas doctor
-
-=======
->>>>>>> rama_alvaro
 });
 
 Route::auth();
-
-Route::get('administrador/usuarios/ver', 'AdminUsers\AdminController@index');
-Route::get('administrador/usuarios/crear', 'AdminUsers\AdminController@create');
-Route::post('administrador/usuarios/creado', 'AdminUsers\AdminController@store');
-
-Route::get('doctor/expediente/ver', 'Doctor\DoctorController@index');
-Route::get('doctor/expediente/hoja_evolucion/crear/{id}', 'Doctor\DoctorController@create_hoja');
-Route::post('doctor/expediente/hoja_evolucion/crear/creado', 'Doctor\DoctorController@store_hoja');
-Route::get('doctor/expediente/hoja_evolucion/ver/{id}', 'Doctor\DoctorController@index_hoja');
-
-Route::get('doctor/expediente/hoja_evolucion/registro_evolucion/crear/{id}','Doctor\DoctorController@create_registro_evolucion');
-Route::post('doctor/expediente/hoja_evolucion/registro_evolucion/crear/creado', 'Doctor\DoctorController@store_registro_evolucion');
-Route::get('doctor/expediente/hoja_evolucion/registros_evolucion/ver/{id}', 'Doctor\DoctorController@index_registros');
-// Route::post('doctor/hoja_evolucion/creado', 'Doctor\DoctorController@store');

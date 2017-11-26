@@ -10,5 +10,4 @@ class hoja_evolucion extends Model
   protected $primaryKey = 'id_hoja_evolucion';
   public $timestamps = false;
   protected $guarded = array();
-  public $timestamps = false;
 }

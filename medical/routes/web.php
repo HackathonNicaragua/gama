@@ -30,10 +30,15 @@ Route::group(['middleware' => 'auth'], function () {
      Route::get("enfermeria/kardex/{sala}",'Enfermeria@kardex_sala');
      Route::get("enfermeria/pacientes/", 'Enfermeria@pacientes');
      Route::get("enfermeria/pacientes/{id}", 'Enfermeria@pacientesID');
-     Route::get("enfermeria/pacientes/{id}/hojamedica", 'Enfermeria@hojamedica');
+     Route::get("enfermeria/pacientes/{id}/hojas_medicas", 'Enfermeria@hojas_medicas');
      //Esta ruta va a mostrarme un kardex en especifico
      //Aqui el enfermero podra imprimir el kardex si lo desea
+     Route::get("enfermeria/hojas_medicas", "Enfermeria@hojas_medicasIndex");
+     Route::get("enfermeria/hojas_medicas/sala/{id}", "Enfermeria@hoja_med_salas");
+     Route::get("enfermeria/hojas_medicas/{id}/historial","Enfermeria@historialAplicacion");
      Route::get("enfermeria/pacientes/{id}/kardex", "Enfermeria@kardexPaciente");
+     Route::get("enfermeria/{id_sala}/aplicardosis/{id}", "Enfermeria@aplicarDosis");
+
      // Rutas Recepcionista
        Route::get('recepcionista/pacientes','recepcionista\PacienteController@index');
        Route::get('recepcionista/pacientes/ingreso/{id?}','recepcionista\PacienteController@create');
@@ -41,16 +46,6 @@ Route::group(['middleware' => 'auth'], function () {
        Route::get('administrador/usuarios/ver', 'AdminUsers\AdminController@index');
        Route::get('administrador/usuarios/crear', 'AdminUsers\AdminController@create');
        Route::post('administrador/usuarios/creado', 'AdminUsers\AdminController@store');
-
-
-
-	// Rutas Recepcionista
-    Route::get('recepcionista/pacientes','recepcionista\PacienteController@index');
-    Route::get('recepcionista/pacientes/ingreso/{id?}','recepcionista\PacienteController@create');
-    Route::post('recepcionista/pacientes/ingreso','recepcionista\PacienteController@store');
-
-    //rutas doctor
-
 });
 
 Route::auth();
