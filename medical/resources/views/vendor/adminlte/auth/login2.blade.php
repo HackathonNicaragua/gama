@@ -73,11 +73,12 @@
                                 </div>
                             </form>
 
-                            {{-- @include('adminlte::auth.partials.social_login') --}}
-
-                            {{-- <a href="{{ url('/password/reset') }}">{{ trans('adminlte_lang::message.forgotpassword') }}</a><br> --}}
-                            {{-- <a href="{{ url('/register') }}" class="text-center">{{ trans('adminlte_lang::message.registermember') }}</a> --}}
-
+                            <h5 class="text'center">¿Deseas buscar un paciente?</h2>
+                            <form class="form-group" action="{{ url('/paciente') }}" method="post">
+                                <label for="nombre_paciente">Cédula</label>
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                <input type="text" class="form-control" name="s" id="nombre_paciente" placeholder="001-120765-0052E">
+                            </form>
                         </div><!-- /.login-box-body -->
 
                     </div><!-- /.login-box -->
