@@ -35,6 +35,15 @@
                             <li><a href="{{url('recepcionista/pacientes/ingreso')}}"><i></i>Registrar</a></li>
                         </ul>
                     </li>
+                @elseif(Auth::user()->tipo == 0)
+                    <li class="header">Administrador</li>
+                    <li class="treeview">
+                        <a href="#"><i class='fa fa-users'></i> <span>Usuarios</span> <i class="fa fa-angle-left pull-right"></i></a>
+                        <ul class="treeview-menu">
+                            <li><a href="{{url('administrador/usuarios/ver')}}"><i class=""></i>Listar</a></li>
+                            <li><a href="{{url('administrador/usuarios/crear')}}"><i></i>Registrar</a></li>
+                        </ul>
+                    </li>
                 @endif
         </ul><!-- /.sidebar-menu -->
     </section>
