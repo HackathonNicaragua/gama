@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('adminlte::auth.login2');
 });
 
 Route::group(['middleware' => 'auth'], function () {
@@ -30,6 +30,14 @@ Route::group(['middleware' => 'auth'], function () {
      Route::get("enfermeria/paciente/{id}/kardex", "Enfermeria@kardexPaciente");
 
 
+
+	// Rutas Recepcionista
+    Route::get('recepcionista/pacientes','recepcionista\PacienteController@index');
+    Route::post('recepcionista/paciente/ingreso','recepcionista\PacienteController@create');
 });
 
 Route::auth();
+
+Route::get('administrador/usuarios/ver', 'AdminUsers\AdminController@index');
+
+

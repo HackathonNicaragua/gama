@@ -39,9 +39,6 @@ desired effect
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-
-        @include('adminlte::layouts.partials.contentheader')
-
         <!-- Main content -->
         <section class="content">
             <!-- Your Page Content Here -->
@@ -58,6 +55,10 @@ desired effect
 @section('scripts')
     @include('adminlte::layouts.partials.scripts')
 @show
-
+<!-- DATA TABLE SCRIPTS -->
+<script src="{{asset('/js/dataTables/jquery.dataTables.js')}}"></script>
+<script src="{{asset('/js/dataTables/dataTables.bootstrap.js')}}"></script> 
+    <!-- DataTable Language -->
+@include('datatable.datatable-script')
 </body>
 </html>
