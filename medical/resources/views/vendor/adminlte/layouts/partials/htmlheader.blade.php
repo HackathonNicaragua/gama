@@ -18,11 +18,7 @@
 
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-    <!-- DATA TABLE SCRIPTS -->
-    <script src="{{asset('/js/dataTables/jquery.dataTables.js')}}"></script>
-    <script src="{{asset('/js/dataTables/dataTables.bootstrap.js')}}"></script> 
-    <!-- DataTable Language -->
-    @include('datatable.datatable-script')
+    
 
     <script>
         //See https://laracasts.com/discuss/channels/vue/use-trans-in-vuejs
@@ -38,4 +34,5 @@
             echo json_encode($trans);
         @endphp
     </script>
+    
 </head>

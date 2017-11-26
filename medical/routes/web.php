@@ -24,8 +24,8 @@ Route::group(['middleware' => 'auth'], function () {
     #adminlte_routes
 
 	// Rutas Recepcionista
-    Route::get('recepcionista','PacienteController@index');
-    Route::post('recepcionista/paciente/ingreso','PacienteController@create');
+    Route::get('recepcionista/pacientes','recepcionista\PacienteController@index');
+    Route::post('recepcionista/paciente/ingreso','recepcionista\PacienteController@create');
 });
 
 Route::auth();
