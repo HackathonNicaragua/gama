@@ -19,7 +19,7 @@
                                      <th >Nombre</th>
                                      <th >Edad</th>
                                      <th >Sexo</th>
-                                     <th >Opciones</th>
+                                     <th ><i class="fa fa-bolt"></i></th>
                                  </thead>
                                  <tbody>
                                      @foreach($pacientes as $p)
@@ -28,7 +28,13 @@
                                             <td class="text-center">{{$p->nombres.' '.$p->apellidos}}</td>
                                             <td class="text-center">{{$p->edad}}</td>
                                             <td class="text-center">{{$p->sexo}}</td>
+                                            <td class="text-center">
+                                                <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#pacientemodal" title="Detalles"><i class="fa fa-eye"></i></a>
+                                                <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#pacientemodal" title="Editar"><i class="fa fa-file"></i></a>
+                                                <a href="#" class="btn btn-danger" data-toggle="tooltip" title="Eliminar"><i class="fa fa-trash-o"></i></a>
+                                            </td>
                                         </tr>
+                                        @include('recepcionista.paciente.pacientemodal')
                                      @endforeach
                                  </tbody>
                              </table>
