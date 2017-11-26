@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Model\expediente;
 use App\Model\hoja_evolucion;
+use App\Model\registro_evolucion;
 use Illuminate\Support\Facades\Redirect;
 
 class DoctorController extends Controller
@@ -42,6 +43,28 @@ class DoctorController extends Controller
         $expediente = expediente::findOrFail($id_expediente);
         return view('doctor/hojaevolucionCreate', ['expediente'=>$expediente]);
     }
+    public function create_registro_evolucion($id_hoja_evolucion)
+    {
+        $hoja_evolucion = hoja_evolucion::findOrFail($id_hoja_evolucion);
+        return view('doctor/registroevolucionCreate', ['hoja_evolucion'=>$hoja_evolucion]);
+    }
+
+    public function store_registro_evolucion(Request $request)
+    {
+        $registro_evolucion = new registro_evolucion;
+        $registro_evolucion->id_hoja_evolucion = $request->get('id_hoja_evolucion');
+        $registro_evolucion->fecha_hora = $request->get('fecha_hora')." 00:00:00";
+        $registro_evolucion->id = 1;
+        $registro_evolucion->estancia_hospitalaria = $request->get('estancia_hospitalaria');
+        $registro_evolucion->sintomas = $request->get('sintomas');
+        $registro_evolucion->descripcion_fisica = $request->get('descripcion_fisica');
+        $registro_evolucion->resumen = $request->get('resumen');
+        $registro_evolucion->plan_alimentacion = $request->get('plan_alimentacion');
+        $registro_evolucion->reportar_evento = 1;
+
+        $registro_evolucion->save();
+        return Redirect::to('doctor/expediente/ver');
+    }
 
     public function store_hoja(Request $request)
     {
@@ -62,11 +85,20 @@ class DoctorController extends Controller
     {
         $hojas_expediente = hoja_evolucion::all()->where('id_expediente',$id_expediente);
         
-        // return dd($hojas_expediente);
+        // return dd($id_expediente);
         return view('doctor/hojasevolucionIndex', ['hojas_expediente'=>$hojas_expediente]);
 
     }
 
+    public function index_registros($id_hoja)
+    {
+        $hoja_expediente = hoja_evolucion::find($id_hoja);
+        $registros_evolucion = registro_evolucion::all()->where('id_hoja_evolucion',$id_hoja);
+        
+        // return dd($id_expediente);
+        return view('doctor/registrosevolucionIndex', ['registros_evolucion'=>$registros_evolucion,'hoja_expediente'=>$hoja_expediente]);
+
+    }
 
     /**
      * Store a newly created resource in storage.
