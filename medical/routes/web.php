@@ -23,6 +23,8 @@ Route::group(['middleware' => 'auth'], function () {
     //Please do not remove this if you want adminlte:route and adminlte:link commands to works correctly.
     #adminlte_routes
      Route::get("enfermeria", 'Enfermeria@index');
+     Route::get("enfermeria/kardex", 'Enfermeria@kardex');
+     Route::get("enfermeria/kardex/{sala}",'Enfermeria@kardex_sala');
      Route::get("enfermeria/pacientes/", 'Enfermeria@pacientes');     
      Route::get("enfermeria/pacientes/{id}", 'Enfermeria@pacientesID');     
      Route::get("enfermeria/pacientes/{id}/hojamedica", 'Enfermeria@hojamedica');     

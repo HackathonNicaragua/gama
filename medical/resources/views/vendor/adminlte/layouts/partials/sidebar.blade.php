@@ -22,11 +22,12 @@
                 <!-- Validando el tipo de usuario que haces -->
                 @if(Auth::user()->tipo == 3)                                                
                 <li class="header">Enfermeria</li>                                 
-                <li class="active"><a href="{{url('enfermeria/pacientes/')}}"                
-                ><i class= 'fa fa-users' ></i> 
-                    Pacientes
-                </a></li>
-            @endif
+                <li class="active"><a href="{{url('enfermeria/pacientes/')}}">
+                <i class= 'fa fa-users' ></i> Pacientes </a></li>
+                <li class="active"><a href="{{url('enfermeria/kardex/')}}">
+                <i class= 'fa fa-file' ></i> Kardex </a></li>
+
+                 @endif
         </ul><!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->
