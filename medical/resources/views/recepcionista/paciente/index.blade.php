@@ -9,7 +9,7 @@
 @section('main-content')
 	<div class="container-fluid spark-screen">
 		<div class="row">
-			<div class="col-md-9 col-md-offset-1">
+			<div class="col-md-16">
                 <div class="panel panel-default">
                     <div class="panel-body">
                         <div class="table-responsive">
@@ -29,8 +29,8 @@
                                             <td class="text-center">{{$p->edad}}</td>
                                             <td class="text-center">{{$p->sexo}}</td>
                                             <td class="text-center">
-                                                <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#pacientemodal" title="Detalles"><i class="fa fa-eye"></i></a>
-                                                <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#pacientemodal" title="Editar"><i class="fa fa-file"></i></a>
+                                                <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#pacientemodal" rel="tooltip" title="Detalles"><i class="fa fa-eye"></i></a>
+                                                <a href="#" class="btn btn-success" data-toggle="tooltip" title="Editar"><i class="fa fa-file"></i></a>
                                                 <a href="#" class="btn btn-danger" data-toggle="tooltip" title="Eliminar"><i class="fa fa-trash-o"></i></a>
                                             </td>
                                         </tr>
