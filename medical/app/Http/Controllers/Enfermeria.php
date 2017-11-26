@@ -118,9 +118,7 @@ class Enfermeria extends Controller
             INNER JOIN medicamento med ON med.id_medicamento = dosis.id_medicamento
             WHERE re.id_registro_evolucion = ?',[$registros_evol[$i]->id_registro_evolucion]);
             $medicamentos+= $x;
-        }       
-            
-        
+        }                   
         return view('enfermeria.kardex_sala', ['sala'=>$sala,'pacientes'=>$pacientes,'medicamentos'=>$medicamentos]);
     }
 
