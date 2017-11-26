@@ -22,6 +22,7 @@
                 <!-- Validando el tipo de usuario que haces -->
                 @if(Auth::user()->tipo == 3)                                                
                 <li class="header">Enfermeria</li>                                 
+<<<<<<< HEAD
                 <li class="active"><a href="{{url('enfermeria/pacientes/')}}"                
                 ><i class= 'fa fa-users' ></i> 
                     Pacientes
@@ -45,6 +46,14 @@
                         </ul>
                     </li>
                 @endif
+=======
+                <li @if(Request::is('enfermeria/pacientes/*'))class="active" @endif><a href="{{url('enfermeria/pacientes/')}}">
+                <i class= 'fa fa-users' ></i> Pacientes </a></li>
+                <li  @if(Request::is('enfermeria/kardex/*'))class="active" @endif><a href="{{url('enfermeria/kardex/')}}">
+                <i class= 'fa fa-file' ></i> Kardex </a></li>
+
+                 @endif
+>>>>>>> rama_alvaro
         </ul><!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->
