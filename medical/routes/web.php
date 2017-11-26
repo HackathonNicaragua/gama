@@ -46,3 +46,9 @@ Route::auth();
 Route::get('administrador/usuarios/ver', 'AdminUsers\AdminController@index');
 Route::get('administrador/usuarios/crear', 'AdminUsers\AdminController@create');
 Route::post('administrador/usuarios/creado', 'AdminUsers\AdminController@store');
+
+Route::get('doctor/expediente/ver', 'Doctor\DoctorController@index');
+Route::get('doctor/expediente/hoja_evolucion/crear/{id}', 'Doctor\DoctorController@create_hoja');
+Route::post('doctor/expediente/hoja_evolucion/crear/creado', 'Doctor\DoctorController@store_hoja');
+Route::get('doctor/expediente/hoja_evolucion/ver/{id}', 'Doctor\DoctorController@index_hoja');
+// Route::post('doctor/hoja_evolucion/creado', 'Doctor\DoctorController@store');
