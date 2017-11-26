@@ -21044,6 +21044,10 @@ table.text-center th {
   margin-bottom: 25px;
   font-weight: 300;
 }
+.logo-img{
+  width: 15px;
+  height: 15px;
+}
 .login-logo a,
 .register-logo a {
   color: #444;

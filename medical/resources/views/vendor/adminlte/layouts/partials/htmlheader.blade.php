@@ -6,6 +6,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <link href="{{ mix('/css/all.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('/css/style.css')}}" rel="stylesheet" />
     <!-- TABLE STYLES-->
     <link href="{{asset('/js/dataTables/dataTables.bootstrap.css')}}" rel="stylesheet" />
 
