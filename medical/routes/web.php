@@ -34,7 +34,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 	// Rutas Recepcionista
     Route::get('recepcionista/pacientes','recepcionista\PacienteController@index');
-    Route::post('recepcionista/pacientes/ingreso','recepcionista\PacienteController@create');
+    Route::get('recepcionista/pacientes/ingreso','recepcionista\PacienteController@create');
 });
 
 Route::auth();

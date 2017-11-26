@@ -13,8 +13,11 @@ class PacienteController extends Controller
     	return view('recepcionista.paciente.index',['pacientes'=>$p]);
     }
     public function show($id){
-    	$p = paciente::find($id):
+    	$p = paciente::find($id);
 
-    	return 
+    	return "";
+    }
+    public function create(){
+    	return "";
     }
 }

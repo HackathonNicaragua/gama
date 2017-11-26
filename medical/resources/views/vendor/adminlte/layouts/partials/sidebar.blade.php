@@ -26,7 +26,16 @@
                 ><i class= 'fa fa-users' ></i> 
                     Pacientes
                 </a></li>
-            @endif
+                @elseif(Auth::user()->tipo == 2)
+                    <li class="header">Recepcionista</li>
+                    <li class="treeview">
+                        <a href="#"><i class='fa fa-users'></i> <span>Pacientes</span> <i class="fa fa-angle-left pull-right"></i></a>
+                        <ul class="treeview-menu">
+                            <li><a href="{{url('recepcionista/pacientes/')}}"><i class=""></i>Listar</a></li>
+                            <li><a href="{{url('recepcionista/pacientes/ingreso')}}"><i></i>Registrar</a></li>
+                        </ul>
+                    </li>
+                @endif
         </ul><!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->
