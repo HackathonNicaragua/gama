@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('adminlte::auth.login2');
 });
 
 Route::group(['middleware' => 'auth'], function () {
@@ -25,3 +25,5 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 Route::auth();
+
+
