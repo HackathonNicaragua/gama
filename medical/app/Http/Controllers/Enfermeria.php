@@ -14,8 +14,8 @@ class Enfermeria extends Controller
     	return view('enfermeria.hojasmedica', ['id' => $id]);
     }
 
-    public function kardex(){
-    	return 'Aqui vamos a mostrar una lista del kardex';
+    public function pacientes(){
+    	return view('enfermeria.pacientes');
     }
 
     public function kardexPaciente($id){
