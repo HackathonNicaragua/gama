@@ -4,6 +4,8 @@ namespace App\Http\Controllers\recepcionista;
 
 use Illuminate\Http\Request;
 use App\Model\paciente;
+use App\Model\expediente;
+use App\Model\rel_hospital_user;
 use App\Http\Controllers\Controller;
 
 class PacienteController extends Controller
@@ -27,8 +29,10 @@ class PacienteController extends Controller
 
         if(request()->input('id_paciente')!=null)
           $p = paciente::find(request()->input('id_paciente'));
-        else
+        else{
           $p = new paciente;
+          $e = new expediente;
+        }
 
         if(request()->input('nombres')!=null)
           $p->nombres = request()->input('nombres');
@@ -46,7 +50,18 @@ class PacienteController extends Controller
           $p->sexo = request()->input('sexo');
 
         $p->save();
+        $idp = $p->id_paciente;
 
+        // Creando el expediente
+      	$h = rel_hospital_user::select('id_hospital')->where('id','=',auth()->user()->id)->first();
+        // return $h->id_hospital;
+        $e->id_hospital = $h->id_hospital;
+        $e->id_paciente = $idp;
+        $e->id = auth()->user()->id;
+
+        $e->save();
+
+        // return $id_hospital;
         return $this->create($p['id_paciente']);
 
     }

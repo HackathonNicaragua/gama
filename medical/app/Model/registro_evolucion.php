@@ -9,4 +9,5 @@ class registro_evolucion extends Model
   protected $table = 'registro_evolucion';
   protected $primaryKey = 'id_registro_evolucion';
   protected $guarded = array();
+  public $timestamps = false;
 }

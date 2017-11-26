@@ -9,4 +9,5 @@ class hoja_evolucion extends Model
   protected $table = 'hoja_evolucion';
   protected $primaryKey = 'id_hoja_evolucion';
   protected $guarded = array();
+  public $timestamps = false;
 }

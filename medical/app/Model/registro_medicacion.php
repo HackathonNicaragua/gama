@@ -9,4 +9,5 @@ class registro_medicacion extends Model
   protected $table = 'registro_medicacion';
   protected $primaryKey = 'id_registro_medicacion';
   protected $guarded = array();
+  public $timestamps = false;
 }

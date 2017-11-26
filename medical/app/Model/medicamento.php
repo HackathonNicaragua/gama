@@ -9,4 +9,5 @@ class medicamento extends Model
   protected $table = 'medicamento';
   protected $primaryKey = 'id_medicamento';
   protected $guarded = array();
+  public $timestamps = false;
 }

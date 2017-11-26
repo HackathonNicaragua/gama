@@ -9,4 +9,5 @@ class rel_paciente_expediente extends Model
   protected $table = 'rel_paciente_expediente';
   protected $primaryKey = 'id_rel_paciente_expediente';
   protected $guarded = array();
+  public $timestamps = false;
 }
