@@ -35,7 +35,9 @@
                             <li><a href="{{url('recepcionista/pacientes/ingreso')}}"><i></i>Registrar</a></li>
                         </ul>
                     </li>
-                @elseif(Auth::user()->tipo == 0)
+                @elseif(Auth::user()->tipo == 1)
+                    <li class="header">Médico</li>
+                @else
                     <li class="header">Administrador</li>
                     <li class="treeview">
                         <a href="#"><i class='fa fa-users'></i> <span>Usuarios</span> <i class="fa fa-angle-left pull-right"></i></a>
