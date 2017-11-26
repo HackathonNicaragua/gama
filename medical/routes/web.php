@@ -14,7 +14,7 @@
 Route::get('/', function () {
     return view('adminlte::auth.login2');
 });
-
+Route::post('/paciente',  'PacienteExterno@pacientesID');
 Route::group(['middleware' => 'auth'], function () {
     //    Route::get('/link1', function ()    {
 //        // Uses Auth Middleware
