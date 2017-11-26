@@ -55,12 +55,16 @@ desired effect
 
 </div><!-- ./wrapper -->
 </div>
+
+
 @section('scripts')
     @include('adminlte::layouts.partials.scripts')
 @show
+
+@yield("gerald_script")
 <!-- DATA TABLE SCRIPTS -->
 <script src="{{asset('/js/dataTables/jquery.dataTables.js')}}"></script>
-<script src="{{asset('/js/dataTables/dataTables.bootstrap.js')}}"></script> 
+<script src="{{asset('/js/dataTables/dataTables.bootstrap.js')}}"></script>
     <!-- DataTable Language -->
 @include('datatable.datatable-script')
 </body>
