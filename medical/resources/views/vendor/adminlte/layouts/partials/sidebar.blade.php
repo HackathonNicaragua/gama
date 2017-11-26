@@ -18,15 +18,14 @@
             </div>
         @endif
         <!-- Sidebar Menu -->
-        <ul class="sidebar-menu">       
+        <ul class="sidebar-menu">
                 <!-- Validando el tipo de usuario que haces -->
-                @if(Auth::user()->tipo == 3)                                                
-                <li class="header">Enfermeria</li>                                 
-<<<<<<< HEAD
-                <li class="active"><a href="{{url('enfermeria/pacientes/')}}"                
-                ><i class= 'fa fa-users' ></i> 
-                    Pacientes
-                </a></li>
+                @if(Auth::user()->tipo == 3)
+                <li class="header">Enfermeria</li>
+                <li @if(Request::is('enfermeria/pacientes/*'))class="active" @endif><a href="{{url('enfermeria/pacientes/')}}">
+                <i class= 'fa fa-users' ></i> Pacientes </a></li>
+                <li  @if(Request::is('enfermeria/kardex/*'))class="active" @endif><a href="{{url('enfermeria/kardex/')}}">
+                <i class= 'fa fa-file' ></i> Kardex </a></li>
                 @elseif(Auth::user()->tipo == 2)
                     <li class="header">Recepcionista</li>
                     <li class="treeview">
@@ -46,14 +45,8 @@
                         </ul>
                     </li>
                 @endif
-=======
-                <li @if(Request::is('enfermeria/pacientes/*'))class="active" @endif><a href="{{url('enfermeria/pacientes/')}}">
-                <i class= 'fa fa-users' ></i> Pacientes </a></li>
-                <li  @if(Request::is('enfermeria/kardex/*'))class="active" @endif><a href="{{url('enfermeria/kardex/')}}">
-                <i class= 'fa fa-file' ></i> Kardex </a></li>
 
-                 @endif
->>>>>>> rama_alvaro
+
         </ul><!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->
