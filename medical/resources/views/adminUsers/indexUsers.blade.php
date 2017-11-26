@@ -24,8 +24,12 @@
                                         <tr>
                                             <td class="text-center">{{$usuario->cedula}}</td>
                                             <td class="text-center">{{$usuario->nombres.' '.$usuario->apellidos}}</td>
-                                            <td class="text-center">{{$usuario->fecha_registro}}</td>
-                                            <td class="text-center">{{$usuario->fecha_registro}}</td>
+                                            <td class="text-center">{{date('M d, Y', strtotime($usuario->fecha_registro))}}</td>
+                                            <td class="text-center">
+                                                <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#pacientemodal" rel="tooltip" title="Detalles"><i class="fa fa-eye"></i></a>
+                                                <a href="#" class="btn btn-success" data-toggle="tooltip" title="Editar"><i class="fa fa-file"></i></a>
+                                                <a href="#" class="btn btn-danger" data-toggle="tooltip" title="Eliminar"><i class="fa fa-trash-o"></i></a>
+                                            </td>
                                         </tr>
                                      @endforeach
                                  </tbody>

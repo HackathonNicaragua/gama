@@ -40,5 +40,7 @@ Route::group(['middleware' => 'auth'], function () {
 Route::auth();
 
 Route::get('administrador/usuarios/ver', 'AdminUsers\AdminController@index');
+Route::get('administrador/usuarios/crear', 'AdminUsers\AdminController@create');
+Route::post('administrador/usuarios/creado', 'AdminUsers\AdminController@store');
 
 

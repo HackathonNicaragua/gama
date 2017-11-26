@@ -5,6 +5,7 @@ namespace App\Http\Controllers\AdminUsers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\User;
+use Illuminate\Support\Facades\Redirect;
 
 class AdminController extends Controller
 {
@@ -27,7 +28,7 @@ class AdminController extends Controller
      */
     public function create()
     {
-        //
+        return view('adminUsers/createUsers');
     }
 
     /**
@@ -38,7 +39,20 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        $usuario=new User;
+        $usuario->name=$request->get('name');
+        $usuario->nombres=$request->get('nombres');
+        $usuario->apellidos=$request->get('apellidos');
+        $usuario->cedula=$request->get('cedula');
+        $usuario->fecha_registro= $request->get('fecha_registro') ." 00:00:00";
+        $usuario->email=$request->get('email');
+        $usuario->password=bcrypt('contra');
+        $usuario->tipo=$request->get('tipo');;
+        $usuario->save();
+
+        return Redirect::to('administrador/usuarios/ver');
+
     }
 
     /**
