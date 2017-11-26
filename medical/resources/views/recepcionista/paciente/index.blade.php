@@ -9,7 +9,7 @@
 @section('main-content')
 	<div class="container-fluid spark-screen">
 		<div class="row">
-			<div class="col-md-9 col-md-offset-1">
+			<div class="col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-body">
                         <div class="table-responsive">
