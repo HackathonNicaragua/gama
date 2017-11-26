@@ -13,27 +13,24 @@
                 <div class="panel panel-default">
                     <div class="panel-body">
                         <div class="table-responsive">
-                             <table id="tabla" class="table table-condensed table-striped table-bordered text-center">
+                             <table id="tabla" class="table table-condensed table-striped table-bordered">
                                  <thead>
-                                     <th >Cedula</th>
-                                     <th >Nombre</th>
-                                     <th >Edad</th>
-                                     <th >Sexo</th>
-                                     <th ><i class="fa fa-bolt"></i></th>
+                                     <th class="text-center">Cedula</th>
+                                     <th class="text-center">Nombre</th>
+                                     <th class="text-center">Edad</th>
+                                     <th class="text-center">Sexo</th>
+                                     <th class="text-center"><i class="fa fa-bolt"></i></th>
                                  </thead>
                                  <tbody>
                                      @foreach($pacientes as $p)
-                                        <tr>
-                                            <td class="text-center">{{$p->cedula}}</td>
-                                            <td class="text-center">{{$p->nombres.' '.$p->apellidos}}</td>
-                                            <td class="text-center">{{$p->edad}}</td>
-                                            <td class="text-center">{{$p->sexo}}</td>
-                                            <td class="text-center">
-                                                <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#pacientemodal" rel="tooltip" title="Detalles"><i class="fa fa-eye"></i></a>
+                                        <tr class="text-center">
+                                            <td>{{$p->cedula}}</td>
+                                            <td>{{$p->nombres.' '.$p->apellidos}}</td>
+                                            <td>{{$p->edad}}</td>
+                                            <td>{{$p->sexo}}</td>
+                                            <td>
                                                 <a href="{{URL::action('recepcionista\PacienteController@create',$p->id_paciente)}}" class="btn btn-success" data-toggle="tooltip" title="Editar"><i class="fa fa-file-text-o"></i></a>
-                                                <a href="#" class="btn btn-danger" data-toggle="tooltip" title="Eliminar"><i class="fa fa-trash-o"></i></a>
-                                            </td>
-                                            @include('recepcionista.paciente.pacientemodal')
+                                            </td>   
                                         </tr>                                        
                                      @endforeach
                                  </tbody>
