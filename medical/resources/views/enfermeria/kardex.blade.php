@@ -9,9 +9,8 @@
 	<div class="container-fluid spark-screen">
 		<div class="row">
 			<div class="col-md-9 col-md-offset-1">
-                    Kardex del paciente {{$k->nombres}}
-					{{$k}}
-					
+				<h2>Kardex del paciente {{$k->nombres}}</h2>
+				<p>	{{$k}}	</p>
 			</div>
 		</div>
 	</div>

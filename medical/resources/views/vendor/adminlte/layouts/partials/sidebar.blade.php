@@ -20,11 +20,12 @@
         <!-- Sidebar Menu -->
         <ul class="sidebar-menu">       
                 <!-- Validando el tipo de usuario que haces -->
-                @if(Auth::user()->tipo == 3)                
-                <li class="header">Enfermeria</li>                
-                <li><a href="{{url('enfermeria/pacientes/')}}"><i class='fa fa-users'></i> <span>
+                @if(Auth::user()->tipo == 3)                                                
+                <li class="header">Enfermeria</li>                                 
+                <li class="active"><a href="{{url('enfermeria/pacientes/')}}"                
+                ><i class= 'fa fa-users' ></i> 
                     Pacientes
-                </span></a></li>
+                </a></li>
             @endif
         </ul><!-- /.sidebar-menu -->
     </section>

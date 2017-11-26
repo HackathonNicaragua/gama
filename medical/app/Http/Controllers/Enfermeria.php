@@ -29,15 +29,24 @@ class Enfermeria extends Controller
         ->join('paciente','paciente.id_paciente', '=', 'expediente.id_expediente')
         ->where('paciente.id_paciente', '=', $id)
         ->first(); 
-    	return view('enfermeria.hojasmedica', ['k'=>$kardex]);
+            if (isset($k)) {
+                return view('enfermeria.hojasmedica', ['k'=>$kardex]);   
+            }else{
+                abort(404);
+            }    	
     }
 
     //
     public function pacientes(){
     	//id_paciente	nombres	apellidos	edad	sexo	cedula	fecha_ingreso
-    	$p = paciente::all();
-    	
+    	$p = paciente::all();    	
     	return view('enfermeria.pacientes', ['pacientes'=>$p]);
+    }
+    
+    public function pacientesID($id)
+    {
+        $p = paciente::find($id);    	
+    	return view('enfermeria.paciente_detalle', ['p'=>$p]);
     }
 
     public function kardexPaciente($id){
@@ -55,7 +64,11 @@ class Enfermeria extends Controller
         ->join('expediente','expediente.id_expediente', '=', 'hoja_evolucion.id_expediente')
         ->join('paciente','paciente.id_paciente', '=', 'expediente.id_expediente')
         ->where('paciente.id_paciente', '=', $id)
-        ->first();        
-    	return view('enfermeria/kardex',['k'=>$kardex]);
+        ->first(); 
+        if (isset($kardex)) {
+            return view('enfermeria/kardex', ['k'=>$kardex]);   
+        }else{
+            abort(404);
+        }              	
     }
 }

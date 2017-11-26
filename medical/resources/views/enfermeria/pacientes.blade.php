@@ -10,14 +10,15 @@
 		<div class="row">
 			<div class="col-md-9 col-md-offset-1">                
             @if(count($pacientes) > 0 )
-                 <ul>                            
+            <h2>Pacientes activos</h2>
+            <div class="list-group">
                  @foreach($pacientes as $p)
-                     <li>
-                        <h2>Paciente {{$p->nombres}} {{$p->apellidos}}. Edad:{{$p->edad}}. Fecha de ingreso {{$p->fecha_ingreso}}</h2>     
-                     </li>
-                    
+                 
+                    <a href="pacientes/{{$p->id_paciente}}" class="list-group-item">
+                    <h3><b> {{$p->nombres}}</b></h2>     
+                    </a>                                                         
                  @endforeach
-                 </ul>
+                 </div>                 
             @else
                 <h2>No hay items</h2>
             @endif
